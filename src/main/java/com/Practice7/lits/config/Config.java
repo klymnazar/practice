@@ -9,10 +9,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
 
-
 @Configuration
 public class Config {
-
 
     @Bean
     public DataSource dataSource() {
@@ -23,17 +21,6 @@ public class Config {
         dataSource.setUrl("jdbc:mysql://localhost:3306/lits?serverTimezone=Europe/Kiev");
         return dataSource;
     }
-
-//    @Bean
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-//        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-//        em.setDataSource(dataSource());
-//        em.setPackagesToScan(new String[]{"com.baeldung.persistence.model"});
-//        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-//        em.setJpaVendorAdapter(vendorAdapter);
-//        em.setJpaProperties(vendorAdapter);
-//        return em;
-//    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
